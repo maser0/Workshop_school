@@ -12,9 +12,9 @@ public class SolutionDao {
     private static final String UPDATE_SOLUTION_QUERY = "UPDATE solutions SET created = ?, updated = ?, description = ?, exercise_id = ?, user_id = ? where id = ?";
     private static final String DELETE_SOLUTION_QUERY = "DELETE FROM solutions WHERE id = ?";
     private static final String FIND_ALL_SOLUTIONS_QUERY = "SELECT * FROM solutions";
-    private static final String FIND_ALL_SOLUTIONS_BY_USER_ID_QUERY = "SELECT * FROM solutions WHERE user_id = ?";
-    private static final String FIND_ALL_BY_EXERCISE_ID_QUERY = "SELECT * FROM solutions WHERE exercise_id = ?";
-    private static final String FIND_ALL_EXERCISES_WITHOUT_SOLUTION_QUERY = "SELECT * FROM solutions WHERE user_id = ? AND description IS NULL";
+    private static final String FIND_ALL_SOLUTIONS_BY_USER_ID_QUERY = "SELECT * FROM solutions WHERE users_id = ?";
+    private static final String FIND_ALL_BY_EXERCISE_ID_QUERY = "SELECT * FROM solutions WHERE exercise_id = ? ORDER BY created ASC";
+    private static final String FIND_ALL_EXERCISES_WITHOUT_SOLUTION_QUERY = "SELECT * FROM solutions WHERE users_id = ? AND description IS NULL";
 
     public Solution readSolution(int solution_id) {
         try (Connection conn = DBUtil.connect()) {
@@ -82,7 +82,7 @@ public class SolutionDao {
         }
     }
 
-    public Solution[] findAllSolutions() {
+    public Solution[] findAll() {
         try (Connection conn = DBUtil.connect()) {
             Solution[] solutions = new Solution[0];
             PreparedStatement statement = conn.prepareStatement(FIND_ALL_SOLUTIONS_QUERY);

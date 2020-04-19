@@ -4,24 +4,7 @@ import dao.GroupDao;
 import model.Group;
 
 import java.util.Scanner;
-//Program po uruchomieniu wyświetli na konsoli
-//        listę wszystkich grup.
-//        Następnie wyświetli w konsoli napis
-//        "Wybierz jedną z opcji:
-//        Po wpisaniu i zatwierdzeniu odpowiedniej opcji
-//        program odpyta o dane i wykona odpowiednią
-//        operacje:
-//        add – dodanie grupy,
-//        edit – edycja grupy,
-//        delete – usunięcie grupy,
-//        quit – zakończenie programu."
-//        add – wszystkie dane występujące w klasie
-//        Group , bez id ,
-//        edit – wszystkie dane występujące w klasie
-//        Group oraz id ,
-//        delete – id grupy którą należy usunąć.
-//        Po wykonaniu dowolnej z opcji, program ponownie wyświetli listę danych i zada pytanie o wybór
-//        opcji.
+
 public class GroupsAdmin {
     public static void main(String[] args) {
         GroupDao groupDao = new GroupDao();
