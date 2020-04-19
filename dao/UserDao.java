@@ -18,7 +18,7 @@ public class UserDao {
             "SELECT * FROM users";
 
 
-    public User createGroup(User user) {
+    public User createUser(User user) {
         try (Connection conn = DBUtil.connect()) {
             PreparedStatement statement =
                     conn.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);

@@ -1,19 +1,23 @@
 package model;
 
-public class Solutions {
+public class Solution {
     private Integer id;
     private String created;
     private String updated;
     private String description;
-    private Integer exerciseId;
-    private Integer userID
+    private Integer exercise_id;
+    private Integer user_id;
 
-    public Solutions(){
+    public Solution(){
 
-    }
+    };
 
-    public Solutions(){
-
+    public Solution(String created, String updated, String description, Integer exerciseId, Integer userId ){
+            this.created = created;
+            this.updated = updated;
+            this.description = description;
+            this.exercise_id= exerciseId;
+            this.user_id= userId;
     }
 
 
@@ -49,19 +53,19 @@ public class Solutions {
         this.description = description;
     }
 
-    public Integer getExerciseId() {
-        return exerciseId;
+    public Integer getExercise_id() {
+        return exercise_id;
     }
 
-    public void setExerciseId(Integer exerciseId) {
-        this.exerciseId = exerciseId;
+    public void setExercise_id(Integer exerciseId) {
+        this.exercise_id = exerciseId;
     }
 
-    public Integer getUserID() {
-        return userID;
+    public Integer getUser_id() {
+        return user_id;
     }
 
-    public void setUserID(Integer userID) {
-        this.userID = userID;
+    public void setUser_id(Integer userId) {
+        this.user_id = userId;
     }
 }
